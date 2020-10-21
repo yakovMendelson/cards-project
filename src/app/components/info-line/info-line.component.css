@@ -1,0 +1,48 @@
+
+nav{
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+
+}
+.float{
+    display: flex ;
+    flex-direction: row;
+}
+/* .verLine{
+    border-left: thick solid #eee5e5;
+} */
+.infoLine{
+    background-color: #e43636 ;
+}
+.nav-link:hover{
+    text-decoration: none;
+}
+.subnav {
+    float: right;
+    overflow: hidden;
+  }
+
+  .subnav-content a{
+    float: right;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .subnav-content a:hover{
+    background-color: #eee;
+    color: black;
+  }
+  .subnav:hover .subnav-content {
+    display: block;
+  }
+  .subnav-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: chartreuse;
+    width: 120px;
+    z-index: 1;
+   list-style: none
+  }
+  

@@ -1,0 +1,16 @@
+
+<div *ngIf='this.getDataSRV' class="container phone-wrapper" >
+  <div *ngFor="let phone of this.getDataSRV.phones"  style="padding: 10px">
+<a [routerLink]="['/phone',phone.id]" class="card "  style="width: 18rem;">
+    <img class="card-img-top" src="https://www.israelhayom.co.il/sites/default/files/u13409/ajndsfkj_0.PNG"  alt="Card image cap" width="50px" height="250px">
+    <div >
+      <a class="btn btn-primary">פרטים מלאים</a>
+      <h5 class="card-title">{{phone.model}}</h5>
+      <p class="card-text">{{ phone.shortDetails }}</p>
+      
+    </div>
+  </a>
+</div>
+</div>
+
+

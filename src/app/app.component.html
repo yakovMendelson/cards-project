@@ -1,0 +1,23 @@
+<!-- <app-image-slider></app-image-slider> -->
+
+
+<div id="page-container">
+    <div id="content-wrap">
+
+
+        <!-- toolbar -->
+        <div class="all-toolbar">
+            <app-nev-toolbar></app-nev-toolbar>
+            <app-info-line></app-info-line>
+        </div>
+
+        <!-- replace pages -->
+        <router-outlet (activate)="onActivate()"></router-outlet>
+
+
+
+       
+    </div>
+    <!-- footer -->
+    <app-footer id="footer"></app-footer>
+</div>

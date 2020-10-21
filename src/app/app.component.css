@@ -1,0 +1,21 @@
+.all-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0; 
+    z-index: 1000; 
+}
+#page-container {
+    position: relative;
+    min-height: 81vh;
+  }
+  
+  #content-wrap {
+    padding-bottom: 2.5rem; 
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;           
+  }
