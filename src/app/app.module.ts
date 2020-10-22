@@ -14,6 +14,7 @@ import { PhoneItemComponent } from './components/phone-item/phone-item.component
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
 import { ShoppingComponent } from './components/shopping/shopping.component';
+import { PayComponent } from './components/pay/pay.component';
 
 
 
@@ -29,7 +30,8 @@ import { ShoppingComponent } from './components/shopping/shopping.component';
     NevToolbarComponent,
     PhoneItemComponent,
     SearchComponent,
-    ShoppingComponent
+    ShoppingComponent,
+    PayComponent
   ],
   imports: [
     BrowserModule,

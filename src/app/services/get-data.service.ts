@@ -14,7 +14,7 @@ isDataReady:boolean = false
   phones:Phone[] = [] ;
   private cart:Phone[]=[]
   phonedIsFull = new BehaviorSubject<boolean>(false) ;
-  private addedToCart = new BehaviorSubject<Phone[]>(null) ;
+  private changeingInCart = new BehaviorSubject<Phone[]>(null) ;
 
   
   constructor(private data:HttpService) { 
@@ -36,10 +36,16 @@ isDataReady:boolean = false
 
   addCard(card:Phone){
     this.cart.push(card)
-    this.addedToCart.next(this.cart)
+    this.changeingInCart.next(this.cart)
   }
 
   chengeCart(){
-    return this.addedToCart.asObservable()
+    return this.changeingInCart.asObservable()
+  }
+
+  deleteFromCart(id){
+     this.cart= this.cart.filter((p)=>p.id != id);
+     this.changeingInCart.next(this.cart)
+     
   }
 }

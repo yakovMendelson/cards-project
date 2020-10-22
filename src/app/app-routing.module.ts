@@ -6,6 +6,7 @@ import { PhonesListComponent } from './components/phones-list/phones-list.compon
 import { PhoneItemComponent } from './components/phone-item/phone-item.component';
 import { SearchComponent } from './components/search/search.component';
 import { ShoppingComponent } from './components/shopping/shopping.component';
+import { PayComponent } from './components/pay/pay.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     {path: 'phone/:id', component: PhoneItemComponent },
     {path: 'contact', component: ContactComponent} ,
     {path: 'shopping', component: ShoppingComponent} ,
+    {path: 'pay', component: PayComponent} ,
     // {path: '**', component: PhonesListComponent },
     {path: '', component: PhonesListComponent }
 ]

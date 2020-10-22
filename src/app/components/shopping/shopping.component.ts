@@ -19,4 +19,10 @@ cart:Phone[]=[]
     })
   }
 
+  deleteFromCart(id){
+ if( confirm('אתה בטוח שברצונך להסיר כרטיס זה'))
+    this.data.deleteFromCart(id);
+    
+  }
+
 }
