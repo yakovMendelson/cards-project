@@ -1,7 +1,7 @@
 <!-- <app-image-slider></app-image-slider> -->
 
 
-<div id="page-container">
+<div *ngIf='!shabat'  id="page-container">
     <div id="content-wrap">
 
 
@@ -20,4 +20,8 @@
     </div>
     <!-- footer -->
     <app-footer id="footer"></app-footer>
+</div>
+
+<div *ngIf='shabat' >
+    <img id="sh" src="https://www.dirshu.co.il/wp-content/uploads/2017/08/%D7%A9%D7%9C%D7%98-%D7%97%D7%A0%D7%95%D7%AA-%D7%A1%D7%92%D7%95%D7%A8-%D7%91%D7%A9%D7%91%D7%AA.jpg" alt="נא לא לעבוד על הפרוייקט שלי בשבת">
 </div>
