@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>הרשם כאן</h1>
+    <form [formGroup]='formGrop' (ngSubmit)='login()'>
+
+    <label ><b>Enter your first name</b></label>
+    <input formControlName='firstname' placeholder=" first-name">
+
+    <label ><b>Enter your last name</b></label>
+    <input formControlName='lastname' placeholder=" last-name">
+
+    <label ><b>Enter your email</b></label>
+    <input formControlName='email' placeholder=" your-email">
+
+    <label><b>Password</b></label>
+    <input formControlName='password' placeholder=" password">
+
+    <label><b>Age</b></label>
+    <input formControlName='age' placeholder=" your-age">
+        
+    <button id="login" type="submit" [disabled]='!formGrop.valid'>Continue</button>
+    </form>
+
+</div>

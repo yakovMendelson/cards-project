@@ -15,7 +15,7 @@ export class AppComponent {
     var D = new Date();
     var d = D.getDay();
     var h = D.getHours();
-    if((d ==5 && h > 17) || (d == 6 && h < 17))
+    if((d ==5 && h > 16) || (d == 6&& h < 17))
       this.shabat=true;
   }
 

@@ -1,6 +1,6 @@
 <div *ngIf='phone' class="container phone-wrapper">
   <div  class="card" style="width: auto;">
-      <img class="card-img-top" src="https://www.israelhayom.co.il/sites/default/files/u13409/ajndsfkj_0.PNG"   alt="Card image cap" height="220px">
+      <img class="card-img-top" src={{phone.imagePath}}  alt="Card image cap" height="220px">
       <div class="card-body">
         <h5 class="card-title">{{phone.model}}</h5>
         <p class="card-text">{{phone.shortDetails}}</p>

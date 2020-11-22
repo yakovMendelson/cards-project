@@ -2,7 +2,7 @@
 <div  class="container phone-wrapper">
     
     <div *ngFor='let card of cart'  class="card" style="width: 250px;">
-        <img class="card-img-top" src="https://www.israelhayom.co.il/sites/default/files/u13409/ajndsfkj_0.PNG"  alt="Card image cap" height="220px">
+        <img class="card-img-top" src={{card.imagePath}} alt="Card image cap" height="220px">
         <div class="card-body">
           <h5 class="card-title">{{card.model}}</h5>
           <p class="card-text">{{card.shortDetails}}</p>
@@ -12,4 +12,4 @@
   
   </div>
 
-  <button [routerLink]="['../pay']"  *ngIf='cart.length>0'  class="btn btn-success">למעבר לעמוד התשלום</button>
+  <button [routerLink]="['../login']"  *ngIf='cart.length>0'  class="btn btn-success">למעבר לעמוד התשלום</button>

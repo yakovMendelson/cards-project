@@ -7,6 +7,8 @@ import { PhoneItemComponent } from './components/phone-item/phone-item.component
 import { SearchComponent } from './components/search/search.component';
 import { ShoppingComponent } from './components/shopping/shopping.component';
 import { PayComponent } from './components/pay/pay.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
     {path: 'contact', component: ContactComponent} ,
     {path: 'shopping', component: ShoppingComponent} ,
     {path: 'pay', component: PayComponent} ,
+    {path: 'login', component: LoginComponent} ,
+    {path: 'signUp', component: SignUpComponent} ,
     // {path: '**', component: PhonesListComponent },
     {path: '', component: PhonesListComponent }
 ]

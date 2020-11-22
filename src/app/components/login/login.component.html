@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>להזמנה התחבר לחשבונך </h1>
+    <form [formGroup]='myGrop' (ngSubmit)='login()'>
+  
+  
+      <label><b>Enter your email</b></label>
+      <input formControlName='email' placeholder="your-email">
+  
+      <label><b>Password</b></label>
+      <input formControlName='password' placeholder="Password">
+  
+      <button id="login" type="submit" [disabled]='!myGrop.valid'>Continue</button>
+    </form>
+  
+    <p>to register, click here</p>
+    <button routerLink="../signUp" >sign up</button>
+  </div>
+  

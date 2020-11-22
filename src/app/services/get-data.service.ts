@@ -19,13 +19,6 @@ isDataReady:boolean = false
   
   constructor(private data:HttpService) { 
     this.data.getAllPhones()
-    .pipe( map(
-      data => {
-        for(let p in data){
-          return data[p]
-        }
-      }
-    ))
     .subscribe(
       (phone: Phone[]) => {
         this.isDataReady = true

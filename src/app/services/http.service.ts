@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Phone } from '../models/phone.model';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-baseURL = 'https://phone-store-ef33c.firebaseio.com/post.json' ;
+  baseURL = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
-getAllPhones(){
-  return this.http.get(this.baseURL) ;
-}
-postAllPhones(phones: Phone[]){
-  this.http.post(this.baseURL, phones).subscribe() ;
-}
+  getAllPhones() {
+    return this.http.get(`${this.baseURL}/cards/all`);
+  }
 
+  createUser(body) {
+    this.http.post(`${this.baseURL}/users/create`, body).subscribe(token=>console.log(token));
+    
+  }
 }

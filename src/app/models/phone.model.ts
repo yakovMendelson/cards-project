@@ -1,10 +1,9 @@
 export class Phone {
-    [x: string]: any;
     company: string ;
     model: string;
     screenSize: number ;
     price: number ;
-    giga: number ;
+    giga?: number ;
     imagePath: string ;
     shortDetails: string ;
     id:number;

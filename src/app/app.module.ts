@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
 import { ShoppingComponent } from './components/shopping/shopping.component';
 import { PayComponent } from './components/pay/pay.component';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 
@@ -31,12 +34,15 @@ import { PayComponent } from './components/pay/pay.component';
     PhoneItemComponent,
     SearchComponent,
     ShoppingComponent,
-    PayComponent
+    PayComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
