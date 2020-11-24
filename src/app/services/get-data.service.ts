@@ -38,7 +38,6 @@ isDataReady:boolean = false
 
   deleteFromCart(id){
      this.cart= this.cart.filter((p)=>p.id != id);
-     this.changeingInCart.next(this.cart)
-     
+     this.changeingInCart.next(this.cart); 
   }
 }

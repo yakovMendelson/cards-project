@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-pay',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class PayComponent implements OnInit {
 
   constructor() { }
-
+  formGrop:FormGroup
   ngOnInit(): void {
   }
 

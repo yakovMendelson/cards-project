@@ -29,11 +29,11 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
+  signUp() {
     let grop =this.formGrop.controls;
     let body={email: grop.email.value,password: grop.password.value,firstname: grop.firstname.value,lastname: grop.lastname.value,age: grop.age.value};
-  
-    this.dataSER.createUser(body)
+    this.dataSER.createUser(body);
+    this.router.navigate(['pay'])
   }
 }
 
