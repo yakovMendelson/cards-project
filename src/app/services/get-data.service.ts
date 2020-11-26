@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 import { map } from 'rxjs/operators';
-import { Phone } from '../models/phone.model';
+import { Card } from '../models/card.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -11,23 +11,23 @@ export class GetDataService {
 
   
 isDataReady:boolean = false
-  phones:Phone[] = [] ;
-  private cart:Phone[]=[]
+  phones:Card[] = [] ;
+  private cart:Card[]=[]
   phonedIsFull = new BehaviorSubject<boolean>(false) ;
-  private changeingInCart = new BehaviorSubject<Phone[]>(null) ;
+  private changeingInCart = new BehaviorSubject<Card[]>(null) ;
 
   
   constructor(private data:HttpService) { 
     this.data.getAllPhones()
     .subscribe(
-      (phone: Phone[]) => {
+      (phone: Card[]) => {
         this.isDataReady = true
           this.phones = phone ;
              this.phonedIsFull.next(this.isDataReady) ;      
       },)    
   }
 
-  addCard(card:Phone){
+  addCard(card:Card){
     this.cart.push(card)
     this.changeingInCart.next(this.cart)
   }

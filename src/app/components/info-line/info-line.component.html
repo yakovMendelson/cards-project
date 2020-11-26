@@ -1,14 +1,14 @@
 <nav class="infoLine text-light navbar-dark bg-dark   navbar navbar-expand-lg">
-
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 
   <div class="subnav ">
     <ul class="navbar-nav">
       <li class="verLine nav-item">
-    <a class="nav-link">קטגוריות</a>
-  </li>
-</ul>
-    <ul class="subnav-content" >
+        <a class="nav-link">קטגוריות</a>
+      </li>
+    </ul>
+    <ul class="subnav-content">
       <li><a href="#">Sport</a></li>
       <li><a href="#">Movie</a></li>
       <li><a href="#">Restaurants</a></li>
@@ -25,13 +25,19 @@
     <li class="verLine nav-item">
       <a class=" nav-link" [routerLink]="['contact']">טלפון: 03-5677655<br>כתובת: בני-ברק</a>
     </li>
-    <li>   <a href="https://wa.me/972527632345"><img style="width: 50px;" src="https://i.pinimg.com/originals/e6/85/55/e685555d3879dd2407d668086ee7208a.png"></a></li>
+    <!-- <li> <a href="https://wa.me/972527632345"><img style="width: 50px;"
+          src="https://i.pinimg.com/originals/e6/85/55/e685555d3879dd2407d668086ee7208a.png"></a></li> -->
 
   </ul>
-  
-    <button class="btn btn-primary cart-3"  [routerLink]="['shopping']">לקופה
-    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+ <h4 *ngIf='user'><a href="#">לקוח {{user.firstname}}  {{user.lastname}}</a></h4>
+ <button #login value="fds" class="btn btn-info cart-3" [routerLink]="['login']">לרישום \ התחברות</button>
+ <button *ngIf='admin' class="btn btn-danger cart-3" [routerLink]="['admin']">לעריכת מנהל</button>
+
+  <button class="btn btn-primary cart-3" [routerLink]="['shopping']">לקופה
+    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd"
+        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
     </svg></button>
-  
+
 </nav>

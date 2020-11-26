@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from 'src/app/services/get-data.service';
-import { Phone } from 'src/app/models/phone.model';
+import { Card } from 'src/app/models/card.model';
 
 @Component({
   selector: 'app-shopping',
@@ -8,7 +8,7 @@ import { Phone } from 'src/app/models/phone.model';
   styleUrls: ['./shopping.component.css']
 })
 export class ShoppingComponent implements OnInit {
-cart:Phone[]=[]
+cart:Card[]=[]
   constructor(private data: GetDataService) { }
 
   ngOnInit(): void {

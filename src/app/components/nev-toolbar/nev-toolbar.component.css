@@ -5,7 +5,7 @@
 }
 #titel{
     color: darkgoldenrod;
-    font-size: 50px;
+    font-size: 50px;width: auto;
     
 }
 #logo{
@@ -16,3 +16,4 @@
     display: flex; 
     flex-direction: column;
 }
+

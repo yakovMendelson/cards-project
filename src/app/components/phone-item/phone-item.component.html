@@ -1,10 +1,10 @@
-<div *ngIf='phone' class="container phone-wrapper">
+<div *ngIf='card' class="container phone-wrapper">
   <div  class="card" style="width: auto;">
-      <img class="card-img-top" src={{phone.imagePath}}  alt="Card image cap" height="220px">
+      <img class="card-img-top" src={{card.imagePath}}  alt="Card image cap" height="220px">
       <div class="card-body">
-        <h5 class="card-title">{{phone.model}}</h5>
-        <p class="card-text">{{phone.shortDetails}}</p>
-        <button class="btn btn-info" (click)='addToCart(phone)'>הוסף לעגלה</button>
+        <h5 class="card-title">{{card.model}}</h5>
+        <p class="card-text">{{card.shortDetails}}</p>
+        <button class="btn btn-info" (click)='addToCart(card)'>הוסף לעגלה</button>
       </div>
     </div>
 

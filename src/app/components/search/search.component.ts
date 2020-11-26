@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from 'src/app/services/get-data.service';
-import { Phone } from 'src/app/models/phone.model';
+import { Card } from 'src/app/models/card.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   model: string;
 
   modelsPhons: string[] = [];
-  detialsPhones: Phone[] = [];
+  detialsPhones: Card[] = [];
   ngOnInit(): void { 
     this.getDataSRV.phonedIsFull.subscribe((phonedIsFull) => {
         if (phonedIsFull) {
@@ -34,7 +34,7 @@ export class SearchComponent implements OnInit {
   }
   search(){
     let s = this.modelsPhons.filter(c => c.toLowerCase().startsWith(this.model));
-    let detialsPhones: Phone[] = [];
+    let detialsPhones: Card[] = [];
     s.forEach(model => {
       this.getDataSRV.phones.forEach(phone => {
         

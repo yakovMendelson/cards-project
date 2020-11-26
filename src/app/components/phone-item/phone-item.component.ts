@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GetDataService } from 'src/app/services/get-data.service';
-import { Phone } from 'src/app/models/phone.model';
+import { Card } from 'src/app/models/card.model';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class PhoneItemComponent implements OnInit {
  
 
   id: number;
-  phone: Phone;
+  card: Card;
   constructor(private route: ActivatedRoute, private getDataSRV: GetDataService) { }
 
   ngOnInit() {
@@ -24,7 +24,7 @@ export class PhoneItemComponent implements OnInit {
       if (phonedIsFull)
       this.getDataSRV.phones.forEach((phone) => {
         if (phone.id == this.id) {
-            this.phone=phone;  
+            this.card=phone;  
         }
       });
     }

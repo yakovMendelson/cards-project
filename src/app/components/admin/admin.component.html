@@ -1,0 +1,20 @@
+<h1>לחץ על הפריט שברצונך לערוך</h1>
+<div *ngIf='this.getDataSRV' class="container phone-wrapper" >
+    <div *ngFor="let card of this.getDataSRV.phones"  style="padding: 10px">
+  <a [routerLink]="['/admin-item',card.id]" class="card "  style="width: 18rem;">
+
+    
+      <img class="card-img-top" src={{card.imagePath}} alt="Card image cap" width="50px" height="250px">
+      <a  class="btn btn-primary">פרטים מלאים</a>
+      <div >
+        
+        <h5 class="card-title">{{card.model}}</h5>
+        <p class="card-text">{{ card.shortDetails }}</p>
+      </div>
+      
+    </a>
+  </div>
+  </div>
+  
+  
+  

@@ -18,6 +18,8 @@ import { PayComponent } from './components/pay/pay.component';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminItemComponent } from './components/admin-item/admin-item.component';
 
 
 
@@ -36,7 +38,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     ShoppingComponent,
     PayComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    AdminComponent,
+    AdminItemComponent
   ],
   imports: [
     BrowserModule,

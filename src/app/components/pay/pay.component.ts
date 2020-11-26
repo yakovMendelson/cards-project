@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-pay',
@@ -8,8 +8,12 @@ import { FormGroup } from '@angular/forms';
 })
 export class PayComponent implements OnInit {
 
-  constructor() { }
-  formGrop:FormGroup
+  constructor(private build : FormBuilder) { }
+  formGrop= this.build.group({
+    name:[],
+    email:[],
+    message:[]
+  })
   ngOnInit(): void {
   }
 

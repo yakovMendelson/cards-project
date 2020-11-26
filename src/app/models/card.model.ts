@@ -1,21 +1,21 @@
-export class Phone {
-    company: string ;
+export class Card {
+    location: string ;
     model: string;
     screenSize: number ;
     price: number ;
     giga?: number ;
     imagePath: string ;
     shortDetails: string ;
+    category:string
     id:number;
 
-    constructor(company:string, model: string, screenSize: number, price: number, giga: number, imagePath: string, shortDetails:string,id:number){
-        this.company = company ;
+    constructor(location:string, model: string, screenSize: number, price: number, category:string, imagePath: string, shortDetails:string,id:number){
+        this.location = location ;
         this.model = model ;
-        this.screenSize = screenSize ;
         this.price = price ;
-        this.giga = giga ;
         this.imagePath = imagePath ;
         this.shortDetails = shortDetails ;
+        this.category=category
         this.id = id ;
     }
 }

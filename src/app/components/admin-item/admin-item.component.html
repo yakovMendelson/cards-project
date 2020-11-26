@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>ערוך כרטיס</h1>
+    <form [formGroup]='formGrop' (ngSubmit)='signUp()'>
+
+    <label ><b>Edit location</b></label>
+    <input formControlName='location' >
+
+    <label ><b>Edit model</b></label>
+    <input formControlName='model'>
+
+    <label ><b>Edit price</b></label>
+    <input formControlName='price'>
+
+    <label><b>Edit image path</b></label>
+    <input formControlName='image'>
+
+    <label><b>Edit short details</b></label>
+    <input formControlName='details'>
+
+    <label><b>Edit category</b></label>
+    <input formControlName='category'>
+        
+    <button id="login" type="submit" [disabled]='!formGrop.valid'>Continue</button>
+    </form>
+
+</div>
+
+

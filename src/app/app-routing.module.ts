@@ -9,6 +9,8 @@ import { ShoppingComponent } from './components/shopping/shopping.component';
 import { PayComponent } from './components/pay/pay.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminItemComponent } from './components/admin-item/admin-item.component';
 
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
     {path: 'pay', component: PayComponent} ,
     {path: 'login', component: LoginComponent} ,
     {path: 'signUp', component: SignUpComponent} ,
+    {path: 'admin', component: AdminComponent} ,
+    {path: 'admin-item/:id', component: AdminItemComponent} ,
     // {path: '**', component: PhonesListComponent },
     {path: '', component: PhonesListComponent }
 ]

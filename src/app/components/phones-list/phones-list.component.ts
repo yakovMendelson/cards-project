@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from 'src/app/services/http.service';
-import { Phone } from 'src/app/models/phone.model';
-import { map } from 'rxjs/operators';
 import { GetDataService } from 'src/app/services/get-data.service';
-import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
