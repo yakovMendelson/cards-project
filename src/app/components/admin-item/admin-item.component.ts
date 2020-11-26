@@ -23,7 +23,7 @@ export class AdminItemComponent implements OnInit {
   
   id: number;
   card: Card;
-  constructor(private route: ActivatedRoute, private getDataSRV: GetDataService) { }
+  constructor(private route: ActivatedRoute, private getDataSRV: GetDataService,private setDataSER:HttpService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
@@ -33,7 +33,6 @@ export class AdminItemComponent implements OnInit {
       this.getDataSRV.phones.forEach((card) => {
         if (card.id == this.id) {
             this.card=card;  
-
             this.formGrop.controls.location.setValue(card.location)
             this.formGrop.controls.model.setValue(card.model)
             this.formGrop.controls.price.setValue(card.price)
@@ -48,9 +47,10 @@ export class AdminItemComponent implements OnInit {
 
 
 
-  signUp() {
+  editCard() {
     let grop =this.formGrop.controls;
-    let body={email: grop.email.value,password: grop.password.value,firstname: grop.firstname.value,lastname: grop.lastname.value,age: grop.age.value};
+    let body={location: grop.location.value,model: grop.model.value,price: grop.price.value,image: grop.image.value,details: grop.details.value,category: grop.category.value};
+    this.setDataSER.editCard(body)
     
   }
 }

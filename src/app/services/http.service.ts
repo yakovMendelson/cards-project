@@ -43,4 +43,10 @@ export class HttpService {
   userLoginReady(){
     return this.userLogin.asObservable()
   }
+
+
+  editCard(body){
+    console.log(body);
+    
+  }
 }
