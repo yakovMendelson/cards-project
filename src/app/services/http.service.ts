@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { Card } from '../models/card.model';
 import { User } from '../models/user.model';
 import { map } from 'rxjs/operators';
 
@@ -45,8 +44,8 @@ export class HttpService {
   }
 
 
-  editCard(body){
-    console.log(body);
-    
+  editCard(body,id){
+    this.http.patch(`${this.baseURL}/cards/edit/${id}`, {...body}).subscribe(card=>console.log(card)
+    )
   }
 }

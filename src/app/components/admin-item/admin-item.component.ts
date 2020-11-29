@@ -49,8 +49,8 @@ export class AdminItemComponent implements OnInit {
 
   editCard() {
     let grop =this.formGrop.controls;
-    let body={location: grop.location.value,model: grop.model.value,price: grop.price.value,image: grop.image.value,details: grop.details.value,category: grop.category.value};
-    this.setDataSER.editCard(body)
+    let body={location: grop.location.value,model: grop.model.value,price: grop.price.value,imagePath: grop.image.value,shortDetails: grop.details.value,category: grop.category.value};
+    this.setDataSER.editCard(body,this.card.id)
     
   }
 }
