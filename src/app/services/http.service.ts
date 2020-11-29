@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { User } from '../models/user.model';
 import { map } from 'rxjs/operators';
+import { GetDataService } from './get-data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-  private user:User;
+  public user:User;
   private userLogin:BehaviorSubject<User>=new BehaviorSubject<User>(null)
   private isAdmin:BehaviorSubject<boolean>=new BehaviorSubject<boolean>(null)
   baseURL = 'http://localhost:3000';
@@ -45,7 +46,16 @@ export class HttpService {
 
 
   editCard(body,id){
-    this.http.patch(`${this.baseURL}/cards/edit/${id}`, {...body}).subscribe(card=>console.log(card)
-    )
+    this.http.patch(`${this.baseURL}/cards/edit/${id}`, {...body}).subscribe(card=>console.log(card))
+  }
+
+
+  deleteCard(cardId){
+    return this.http.delete(`${this.baseURL}/cards/delete/${cardId}`)
+  }
+
+
+  createCard(body){
+    return this.http.post(`${this.baseURL}/cards/create`,body)
   }
 }

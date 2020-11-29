@@ -23,14 +23,14 @@ export class AdminItemComponent implements OnInit {
   
   id: number;
   card: Card;
-  constructor(private route: ActivatedRoute, private getDataSRV: GetDataService,private setDataSER:HttpService) { }
+  constructor(private route: ActivatedRoute, private getDataSRV: GetDataService,private setDataSER:HttpService,private router:Router) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
 
     this.getDataSRV.phonedIsFull.subscribe((phonedIsFull ) => {
       if (phonedIsFull)
-      this.getDataSRV.phones.forEach((card) => {
+      this.getDataSRV.cards.forEach((card) => {
         if (card.id == this.id) {
             this.card=card;  
             this.formGrop.controls.location.setValue(card.location)
@@ -49,10 +49,14 @@ export class AdminItemComponent implements OnInit {
 
   editCard() {
     let grop =this.formGrop.controls;
-    let body={location: grop.location.value,model: grop.model.value,price: grop.price.value,imagePath: grop.image.value,shortDetails: grop.details.value,category: grop.category.value};
-    this.setDataSER.editCard(body,this.card.id)
+    let price =Number(grop.price.value)
+    let body={location: grop.location.value,model: grop.model.value,price: price,imagePath: grop.image.value,shortDetails: grop.details.value,category: grop.category.value};
+    this.setDataSER.editCard(body,this.card.id);
+    this.getDataSRV.refresh()
+    this.router.navigate(['../../admin'])
     
   }
+
 }
 
 

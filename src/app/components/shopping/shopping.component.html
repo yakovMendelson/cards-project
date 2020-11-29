@@ -1,4 +1,5 @@
 <h1>עגלת הקניות שלך</h1>
+<h1 *ngIf='cart.length<1'>ריקה</h1>
 <div  class="container phone-wrapper">
     
     <div *ngFor='let card of cart'  class="card" style="width: 250px;">
@@ -12,4 +13,5 @@
   
   </div>
 
-  <button [routerLink]="['../login']"  *ngIf='cart.length>0'  class="btn btn-success">למעבר לעמוד התשלום</button>
+  <button  [routerLink]="['../login']"  *ngIf='cart.length>0 && login==false'  class="btn btn-success"> לתשלום לחץ להרשמה</button>
+  <button  [routerLink]="['../pay']"  *ngIf='cart.length>0 && login'  class="btn btn-info">המשך לעמוד התשלום</button>

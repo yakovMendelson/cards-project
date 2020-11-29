@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminItemComponent } from './components/admin-item/admin-item.component';
+import { AdminAddCardComponent } from './components/admin-add-card/admin-add-card.component';
 
 
 
@@ -40,7 +41,8 @@ import { AdminItemComponent } from './components/admin-item/admin-item.component
     LoginComponent,
     SignUpComponent,
     AdminComponent,
-    AdminItemComponent
+    AdminItemComponent,
+    AdminAddCardComponent
   ],
   imports: [
     BrowserModule,

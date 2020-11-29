@@ -14,13 +14,13 @@ export class SearchComponent implements OnInit {
 
   model: string;
 
-  modelsPhons: string[] = [];
-  detialsPhones: Card[] = [];
+  modelsCard: string[] = [];
+  detialsCard: Card[] = [];
   ngOnInit(): void { 
     this.getDataSRV.phonedIsFull.subscribe((phonedIsFull) => {
         if (phonedIsFull) {
-          this.getDataSRV.phones.forEach((phone) => {
-            this.modelsPhons.push(phone.model);
+          this.getDataSRV.cards.forEach((card) => {
+            this.modelsCard.push(card.model);
             if(this.model)
                this.search()
           });
@@ -33,17 +33,17 @@ export class SearchComponent implements OnInit {
 
   }
   search(){
-    let s = this.modelsPhons.filter(c => c.toLowerCase().startsWith(this.model));
-    let detialsPhones: Card[] = [];
+    let s = this.modelsCard.filter(c => c.toLowerCase().startsWith(this.model));
+    let detialsCard: Card[] = [];
     s.forEach(model => {
-      this.getDataSRV.phones.forEach(phone => {
+      this.getDataSRV.cards.forEach(card => {
         
-        if (phone.model == model) {
-            detialsPhones.push(phone)
+        if (card.model == model) {
+            detialsCard.push(card)
         }
     });
   });
-  this.detialsPhones=detialsPhones
+  this.detialsCard=detialsCard
 
   }
 

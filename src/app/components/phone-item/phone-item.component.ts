@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GetDataService } from 'src/app/services/get-data.service';
 import { Card } from 'src/app/models/card.model';
 
@@ -15,14 +15,14 @@ export class PhoneItemComponent implements OnInit {
 
   id: number;
   card: Card;
-  constructor(private route: ActivatedRoute, private getDataSRV: GetDataService) { }
+  constructor(private route: ActivatedRoute, private getDataSRV: GetDataService, private router:Router) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
 
     this.getDataSRV.phonedIsFull.subscribe((phonedIsFull ) => {
       if (phonedIsFull)
-      this.getDataSRV.phones.forEach((phone) => {
+      this.getDataSRV.cards.forEach((phone) => {
         if (phone.id == this.id) {
             this.card=phone;  
         }
@@ -32,7 +32,7 @@ export class PhoneItemComponent implements OnInit {
   }
   addToCart(model){
     this.getDataSRV.addCard(model);
-    alert('המוצר נוסף לעגלה')
+    this.router.navigate(['../'])
   }
 
 }

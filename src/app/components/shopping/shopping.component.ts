@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from 'src/app/services/get-data.service';
 import { Card } from 'src/app/models/card.model';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-shopping',
@@ -9,19 +10,23 @@ import { Card } from 'src/app/models/card.model';
 })
 export class ShoppingComponent implements OnInit {
 cart:Card[]=[]
-  constructor(private data: GetDataService) { }
+login:boolean=false
+  constructor(private getdata: GetDataService ,private setdata:HttpService) { }
 
   ngOnInit(): void {
-    this.data.chengeCart().subscribe(card=>{
+    this.getdata.chengeCart().subscribe(card=>{
       if(card){
         this.cart=card
+        if(this.setdata.user)
+        this.login=true
       }
     })
+    
   }
 
   deleteFromCart(id){
- if( confirm('אתה בטוח שברצונך להסיר כרטיס זה'))
-    this.data.deleteFromCart(id);
+ if(confirm('אתה בטוח שברצונך להסיר כרטיס זה'))
+    this.getdata.deleteFromCart(id);
     
   }
 

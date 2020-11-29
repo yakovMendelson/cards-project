@@ -2,11 +2,13 @@
   <div  class="card" style="width: auto;">
       <img class="card-img-top" src={{card.imagePath}}  alt="Card image cap" height="220px">
       <div class="card-body">
-        <h5 class="card-title">{{card.model}}</h5>
-        <p class="card-text">{{card.shortDetails}}</p>
+        <h5 class="card-title">model: {{card.model}}</h5>
+        <p class="card-text">location: {{card.location}}</p>
+        <p class="card-text">category: {{card.category}}</p>
+        <p class="card-text">price: {{card.price |currency:"ILS"}}</p>
+        <p class="card-text">details: {{card.shortDetails}}</p>
         <button class="btn btn-info" (click)='addToCart(card)'>הוסף לעגלה</button>
       </div>
     </div>
 
 </div>
-

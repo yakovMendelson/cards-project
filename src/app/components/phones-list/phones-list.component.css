@@ -1,7 +1,6 @@
 .phone-wrapper{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 .card{
     text-decoration: none;

@@ -5,12 +5,12 @@
 }
 #titel{
     color: darkgoldenrod;
-    font-size: 50px;width: auto;
+    font-size: 30px;width: auto;
     
 }
 #logo{
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }
 .navbar-dark{
     display: flex; 

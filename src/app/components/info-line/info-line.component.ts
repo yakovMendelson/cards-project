@@ -14,15 +14,16 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class InfoLineComponent implements OnInit {
   user: User;
+  boolAdmin:string='block'
+  boolClient:string='block'
+  boolLogOut:string='none'
   admin:boolean=false
-  @ViewChild("login") login:ElementRef
   constructor(private router: Router, private userSER: HttpService) { }
   ngOnInit(): void {
     this.userSER.userLoginReady().subscribe(use => {
       if (use) {
         this.user = use
         this.admin=use.admin
-        this.login.nativeElement.textContent="להתתנתקות";
       }
     }
     )

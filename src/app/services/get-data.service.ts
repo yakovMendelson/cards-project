@@ -11,25 +11,37 @@ export class GetDataService {
 
   
 isDataReady:boolean = false
-  phones:Card[] = [] ;
+  cards:Card[] = [] ;
   private cart:Card[]=[]
   phonedIsFull = new BehaviorSubject<boolean>(false) ;
   private changeingInCart = new BehaviorSubject<Card[]>(null) ;
+private sumPrice = 0;
 
   
   constructor(private data:HttpService) { 
+    this.refresh()
+  }
+
+  refresh(){
     this.data.getAllPhones()
     .subscribe(
-      (phone: Card[]) => {
+      (cards: Card[]) => {
         this.isDataReady = true
-          this.phones = phone ;
+          this.cards = cards ;
              this.phonedIsFull.next(this.isDataReady) ;      
-      },)    
+      },)  
   }
 
   addCard(card:Card){
+   let a= this.cart.filter(val=>card.id==val.id)
+   if(a.length<1){
     this.cart.push(card)
+    this.sumPrice+=card.price;
     this.changeingInCart.next(this.cart)
+    alert('הכרטיס נוסף לעגלה')
+  }
+  else 
+  alert('הכרטיס כבר קיים בעגלה')
   }
 
   chengeCart(){
@@ -38,6 +50,12 @@ isDataReady:boolean = false
 
   deleteFromCart(id){
      this.cart= this.cart.filter((p)=>p.id != id);
+     let cardDel =this.cart.filter((p)=>p.id = id)
+     this.sumPrice -=cardDel[0].price
      this.changeingInCart.next(this.cart); 
+  }
+  getSumPrice(){
+    let sum = this.sumPrice
+    return sum;
   }
 }
