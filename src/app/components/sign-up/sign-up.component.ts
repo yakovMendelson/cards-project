@@ -23,7 +23,7 @@ export class SignUpComponent implements OnInit {
     age: new FormControl(26, [ Validators.required])
   });
 
-
+  err:string;
   constructor(private router: Router,private dataSER:HttpService) { }
 
   ngOnInit(): void {
@@ -32,8 +32,10 @@ export class SignUpComponent implements OnInit {
   signUp() {
     let grop =this.formGrop.controls;
     let body={email: grop.email.value,password: grop.password.value,firstname: grop.firstname.value,lastname: grop.lastname.value,age: grop.age.value};
-    this.dataSER.createUser(body);
-    this.router.navigate(['pay'])
+    this.dataSER.createUser(body).subscribe(()=>{this.router.navigate(['/'])},err=>{this.err=err.error.message;
+      console.log(err);
+    });
+    
   }
 }
 

@@ -20,6 +20,8 @@ export class InfoLineComponent implements OnInit {
   admin:boolean=false
   constructor(private router: Router, private userSER: HttpService) { }
   ngOnInit(): void {
+    if(localStorage.getItem('admin'))
+    this.admin=true
     this.userSER.userLoginReady().subscribe(use => {
       if (use) {
         this.user = use
@@ -32,6 +34,9 @@ export class InfoLineComponent implements OnInit {
   search(event) {
 
     this.router.navigate(['search'], { queryParams: { searchId: event } })
+  }
+  logout(){
+
   }
 }
 

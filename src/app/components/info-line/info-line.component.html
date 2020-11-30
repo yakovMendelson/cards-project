@@ -9,9 +9,9 @@
       </li>
     </ul>
     <ul class="subnav-content">
-      <li><a href="#">Sport</a></li>
-      <li><a href="#">Movie</a></li>
-      <li><a href="#">Restaurants</a></li>
+      <li><a href="#">מקומות לבתי כנסת</a></li>
+      <li><a href="#">כרטיסים למקווה</a></li>
+      <li><a href="#">כרטיסי חבר לספריה</a></li>
     </ul>
   </div>
 
@@ -25,13 +25,13 @@
     <li class="verLine nav-item">
       <a class=" nav-link" [routerLink]="['contact']">טלפון: 03-5677655<br>כתובת: בני-ברק</a>
     </li>
-    <li> <a href="https://wa.me/972527632345"><img style="width: 50px;"
+    <li> <a href="https://wa.me/972533040623"><img style="width: 50px;"
           src="https://i.pinimg.com/originals/e6/85/55/e685555d3879dd2407d668086ee7208a.png"></a></li>
 
   </ul>
  <h4 *ngIf='user'><a href="#">לקוח {{user.firstname}}  {{user.lastname}}</a></h4>
- <button (click)='boolClient="none";boolLogOut="block"' [ngStyle]="{display: boolClient}" value="fds" class="btn btn-info cart-3" [routerLink]="['login']">לרישום \ התחברות</button>
- <button (click)='boolClient="block";boolLogOut="none"' [ngStyle]="{display: boolLogOut}" value="fds" class="btn btn-info cart-3" [routerLink]="['login']">להתנתקות</button>
+ <button (click)='boolClient="none"' [ngStyle]="{display: boolClient}" value="fds" class="btn btn-info cart-3" [routerLink]="['login']">לרישום \ התחברות</button>
+ <button (click)='logout()' [ngStyle]="{display: boolLogOut}" value="fds" class="btn btn-info cart-3" [routerLink]="['login']">להתנתקות</button>
  <button (click)='boolAdmin="none"' [ngStyle]="{display: boolAdmin}" *ngIf='admin' class="btn btn-danger cart-3" [routerLink]="['admin']">לעריכת מנהל</button>
 
   <button class="btn btn-primary cart-3" [routerLink]="['shopping']">לקופה

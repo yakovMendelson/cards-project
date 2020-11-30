@@ -18,6 +18,7 @@
     <input formControlName='age' placeholder=" your-age">
         
     <button id="login" type="submit" [disabled]='!formGrop.valid'>Continue</button>
+    <h1 id="err" *ngIf='err'>{{err}}</h1>
     </form>
     <p>If you are a registered user ,click here</p>
     <button routerLink="../login" >login</button>

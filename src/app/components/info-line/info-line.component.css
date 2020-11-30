@@ -40,8 +40,8 @@ nav{
     display: none;
     position: absolute;
     right: 0;
-    background-color: chartreuse;
-    width: 120px;
+    background-color: blueviolet;
+    width: 250px;
     z-index: 1;
    list-style: none
   

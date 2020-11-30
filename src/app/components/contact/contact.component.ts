@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,7 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
   
-  constructor(private build : FormBuilder) { }
+  constructor(private build : FormBuilder, private setData:HttpService) { }
   formGrop= this.build.group({
     name:[],
     email:[],
@@ -17,8 +18,10 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
   send(){
-    console.log(this.formGrop);
     
+    let grop =this.formGrop.controls;
+    let body = {email:grop.email.value,subject:grop.name.value,text:grop.message.value};
+    this.setData.sendEmail(body).subscribe()
   }
 
 }

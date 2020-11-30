@@ -37,3 +37,6 @@ span.psw {
   padding-top: 16px;
 }
 
+#err{
+  color: red;
+}

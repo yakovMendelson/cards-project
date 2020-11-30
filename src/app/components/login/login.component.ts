@@ -11,7 +11,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+err:string;
   myGrop: FormGroup = new FormGroup({
     email: new FormControl('yakov.m1994@gmail.com', [Validators.email, Validators.required]),
     password: new FormControl('313122673', [Validators.maxLength(16), Validators.minLength(8), Validators.required])
@@ -34,10 +34,17 @@ export class LoginComponent implements OnInit {
    
       let grop =this.myGrop.controls;
       let body={email: grop.email.value,password: grop.password.value};
-      this.dataHttpSER.login(body).subscribe((use=>{
-      }));
-      this.router.navigate(['pay'])
+      this.dataHttpSER.login(body).subscribe(()=>{console.log('yes');
+    this.router.navigate(['/'])
+    },
+    (err)=>{this.err=err.error.message;
+    console.log(err);
+    }
+      
+      );
+      
     
   }
+  
 
 }

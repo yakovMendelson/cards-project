@@ -10,6 +10,7 @@
       <input formControlName='password' placeholder="Password">
   
       <button id="login" type="submit" [disabled]='!myGrop.valid'>Continue</button>
+      <h1 id="err" *ngIf='err'>{{err}}</h1>
     </form>
   
     <p>to register, click here</p>
