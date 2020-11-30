@@ -43,7 +43,9 @@ export class HttpService {
           localStorage.setItem("admin", 'admin');
         }
         else
-          this.admin = 'client'
+          this.admin = 'client';
+          let user =JSON.stringify(use) 
+          localStorage.setItem('user',user)
         this.isAdmin.next(this.user.admin)
         this.userLogin.next(this.user);
         return use

@@ -21,7 +21,15 @@ export class ContactComponent implements OnInit {
     
     let grop =this.formGrop.controls;
     let body = {email:grop.email.value,subject:grop.name.value,text:grop.message.value};
-    this.setData.sendEmail(body).subscribe()
+   
+    this.setData.sendEmail(body).subscribe(()=>{
+      grop.email.setValue('');
+      grop.name.setValue('');
+      grop.message.setValue('');
+      setTimeout(() => {
+        alert('תודה רבה! נחזור אליך בהקדם.')
+      }, 100);
+    })
   }
 
 }

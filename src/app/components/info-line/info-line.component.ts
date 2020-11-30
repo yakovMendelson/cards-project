@@ -21,7 +21,12 @@ export class InfoLineComponent implements OnInit {
   constructor(private router: Router, private userSER: HttpService) { }
   ngOnInit(): void {
     if(localStorage.getItem('admin'))
-    this.admin=true
+    this.admin=true;
+    let user =localStorage.getItem('user')
+    if(user)
+    this.user=JSON.parse(localStorage.getItem('user'))
+    
+    
     this.userSER.userLoginReady().subscribe(use => {
       if (use) {
         this.user = use

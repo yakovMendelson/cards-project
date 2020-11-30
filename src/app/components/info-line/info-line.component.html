@@ -30,8 +30,8 @@
 
   </ul>
  <h4 *ngIf='user'><a href="#">לקוח {{user.firstname}}  {{user.lastname}}</a></h4>
- <button (click)='boolClient="none"' [ngStyle]="{display: boolClient}" value="fds" class="btn btn-info cart-3" [routerLink]="['login']">לרישום \ התחברות</button>
- <button (click)='logout()' [ngStyle]="{display: boolLogOut}" value="fds" class="btn btn-info cart-3" [routerLink]="['login']">להתנתקות</button>
+ <button *ngIf='!user' value="fds" class="btn btn-info cart-3" [routerLink]="['login']">לרישום \ התחברות</button>
+ <button *ngIf='user' value="fds" class="btn btn-info cart-3" [routerLink]="['login']">להתנתקות</button>
  <button (click)='boolAdmin="none"' [ngStyle]="{display: boolAdmin}" *ngIf='admin' class="btn btn-danger cart-3" [routerLink]="['admin']">לעריכת מנהל</button>
 
   <button class="btn btn-primary cart-3" [routerLink]="['shopping']">לקופה
