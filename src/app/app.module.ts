@@ -21,6 +21,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminItemComponent } from './components/admin-item/admin-item.component';
 import { AdminAddCardComponent } from './components/admin-add-card/admin-add-card.component';
+import { CategoryComponent } from './components/category/category.component';
 
 
 
@@ -42,7 +43,8 @@ import { AdminAddCardComponent } from './components/admin-add-card/admin-add-car
     SignUpComponent,
     AdminComponent,
     AdminItemComponent,
-    AdminAddCardComponent
+    AdminAddCardComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

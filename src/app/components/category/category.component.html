@@ -1,8 +1,8 @@
-<div class="container phone-wrapper" >
-    <div *ngFor="let card of this.detialsCard"  style="padding: 10px">
+<div *ngIf='this.getDataSRV' class="container phone-wrapper" >
+    <div *ngFor="let card of this.getDataSRV.cards"  style="padding: 10px">
   <a [routerLink]="['/phone',card.id]" class="card "  style="width: 18rem;">
-      <img class="card-img-top" src={{card.imagePath}}  alt="Card image cap" width="50px" height="250px">
-      <div class="card-body">
+      <img class="card-img-top" src={{card.imagePath}} alt="Card image cap" width="50px" height="250px">
+      <div >
         <a class="btn btn-primary">פרטים מלאים</a>
         <h5 class="card-title">{{card.location}}</h5>
         <p class="card-text">{{ card.shortDetails }}</p>
@@ -11,4 +11,4 @@
     </a>
   </div>
   </div>
- 
+  

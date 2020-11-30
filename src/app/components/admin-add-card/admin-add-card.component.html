@@ -18,7 +18,11 @@
     <input formControlName='details'>
 
     <label><b>Edit category</b></label>
-    <input formControlName='category'>
+    <select formControlName='category'>
+        <option value="בתי-כנסת">בתי-כנסת</option>
+        <option value="מקוואות">מקוואות</option>
+        <option value="ספרייה">ספרייה</option>
+      </select>
         
     <button id="login" type="submit" [disabled]='!formGrop.valid' >Continue</button>
     </form>

@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
 
   constructor(public getDataSRV: GetDataService, private route: ActivatedRoute) { }
 
-  model: string;
+  location: string;
 
   modelsCard: string[] = [];
   detialsCard: Card[] = [];
@@ -20,25 +20,25 @@ export class SearchComponent implements OnInit {
     this.getDataSRV.phonedIsFull.subscribe((phonedIsFull) => {
         if (phonedIsFull) {
           this.getDataSRV.cards.forEach((card) => {
-            this.modelsCard.push(card.model);
-            if(this.model)
+            this.modelsCard.push(card.location);
+            if(this.location)
                this.search()
           });
         }
       });
     this.route.queryParams.subscribe(params => {
-      this.model = params['searchId'];
+      this.location = params['searchId'];
       this.search()
     });
 
   }
   search(){
-    let s = this.modelsCard.filter(c => c.toLowerCase().startsWith(this.model));
+    let s = this.modelsCard.filter(c => c.toLowerCase().startsWith(this.location));
     let detialsCard: Card[] = [];
-    s.forEach(model => {
+    s.forEach(location => {
       this.getDataSRV.cards.forEach(card => {
         
-        if (card.model == model) {
+        if (card.location == location) {
             detialsCard.push(card)
         }
     });

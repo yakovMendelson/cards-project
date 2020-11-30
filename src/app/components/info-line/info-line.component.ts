@@ -41,7 +41,8 @@ export class InfoLineComponent implements OnInit {
     this.router.navigate(['search'], { queryParams: { searchId: event } })
   }
   logout(){
-
+    localStorage.clear();
+    location.reload();
   }
 }
 
