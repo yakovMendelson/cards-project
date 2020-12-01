@@ -63,7 +63,7 @@ export class HttpService {
     let admin = this.admin;
     let token = localStorage.getItem('token')
     let headers = new HttpHeaders({ admin, token });
-    this.http.patch(`${this.baseURL}/cards/edit/${id}`, { ...body }, { headers }).subscribe(card => console.log(card))
+    return this.http.patch(`${this.baseURL}/cards/edit/${id}`,{ ...body }, { headers })
   }
 
 

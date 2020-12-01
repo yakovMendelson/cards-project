@@ -7,7 +7,6 @@ import { InfoLineComponent } from './components/info-line/info-line.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
-import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { PhonesListComponent } from './components/phones-list/phones-list.component';
 import { NevToolbarComponent } from './components/nev-toolbar/nev-toolbar.component';
 import { PhoneItemComponent } from './components/phone-item/phone-item.component';
@@ -32,7 +31,6 @@ import { CategoryComponent } from './components/category/category.component';
     FooterComponent,
     ContactComponent,
     AboutComponent,
-    ImageSliderComponent,
     PhonesListComponent,
     NevToolbarComponent,
     PhoneItemComponent,

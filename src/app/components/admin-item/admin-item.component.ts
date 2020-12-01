@@ -47,15 +47,15 @@ export class AdminItemComponent implements OnInit {
 
 
 
-  editCard() {
+ editCard() {
     let grop =this.formGrop.controls;
     let price =Number(grop.price.value)
     let body={location: grop.location.value,model: grop.model.value,price: price,imagePath: grop.image.value,shortDetails: grop.details.value,category: grop.category.value};
     
-    this.setDataSER.editCard(body,this.card.id);
-    this.getDataSRV.refresh()
-    this.router.navigate(['../../admin'])
-    
+    this.setDataSER.editCard(body,this.card.id).subscribe(()=>{
+      this.getDataSRV.refresh()
+    this.router.navigate(['../../admin'])}
+    );
   }
 
 }

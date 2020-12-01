@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from 'src/app/services/get-data.service';
+import { ActivatedRoute } from '@angular/router';
+import { Card } from 'src/app/models/card.model';
 
 @Component({
   selector: 'app-category',
@@ -8,9 +10,17 @@ import { GetDataService } from 'src/app/services/get-data.service';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor(public getDataSRV: GetDataService) { }
+  constructor(public getDataSRV: GetDataService,private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
+
+  ngOnInit(): void { 
+    
+    // this.route.queryParams.subscribe(params => {
+    //   //  = params['category'];
+    //   // this.search()
+    // });
+
   }
+ 
 
 }

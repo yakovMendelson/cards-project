@@ -44,6 +44,9 @@ export class InfoLineComponent implements OnInit {
     localStorage.clear();
     location.reload();
   }
+  category(ev){
+    this.router.navigate(['category'], { queryParams: { category: ev } })
+  }
 }
 
 

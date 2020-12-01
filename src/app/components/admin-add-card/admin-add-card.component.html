@@ -2,27 +2,53 @@
     <h1>הוסף כרטיס</h1>
     <form [formGroup]='formGrop' (ngSubmit)='addCard()'>
 
-    <label ><b>Edit location</b></label>
-    <input formControlName='location' >
-
-    <label ><b>Edit model</b></label>
-    <input formControlName='model'>
-
-    <label ><b>Edit price</b></label>
-    <input formControlName='price'>
-
-    <label><b>Edit image path</b></label>
-    <input formControlName='image'>
-
-    <label><b>Edit short details</b></label>
-    <input formControlName='details'>
-
-    <label><b>Edit category</b></label>
-    <select formControlName='category'>
-        <option value="בתי-כנסת">בתי-כנסת</option>
-        <option value="מקוואות">מקוואות</option>
-        <option value="ספרייה">ספרייה</option>
-      </select>
+        <label ><b>Add location</b></label>
+        <input  formControlName='location' >
+        <div class="errors" *ngIf="formGrop.controls.location.errors && formGrop.controls.location.invalid && (formGrop.controls.location.dirty || formGrop.controls.location.touched)">
+           * location is required
+          </div>
+    
+        <label ><b>Add model</b></label>
+        <input formControlName='model'>
+    
+        <div class="errors" *ngIf="formGrop.controls.model.errors && formGrop.controls.model.invalid && (formGrop.controls.model.dirty || formGrop.controls.model.touched)">
+            * model is required
+           </div>
+    
+        <label ><b>Add price</b></label>
+        <input formControlName='price'>
+    
+        <div class="errors" *ngIf="formGrop.controls.price.errors && formGrop.controls.price.invalid && (formGrop.controls.price.dirty || formGrop.controls.price.touched)">
+            * price is required
+           </div>
+    
+        <label><b>Add image path</b></label>
+        <input formControlName='image'>
+    
+        <div class="errors" *ngIf="formGrop.controls.image.errors && formGrop.controls.image.invalid && (formGrop.controls.image.dirty || formGrop.controls.image.touched)">
+            * image is required
+           </div>
+    
+        <label><b>Add address</b></label>
+        <input formControlName='details'>
+    
+        <!-- <div *ngIf="" -->
+        
+        <div class="errors" *ngIf="formGrop.controls.details.errors && formGrop.controls.details.invalid && (formGrop.controls.details.dirty || formGrop.controls.details.touched)">
+            * details is required
+           </div>
+    
+        <label><b>Add category: </b></label>
+        <select formControlName='category'>
+            <option value="בתי-כנסת">בתי-כנסת</option>
+            <option value="מקוואות">מקוואות</option>
+            <option value="ספרייה">ספרייה</option>
+          </select>
+    
+          
+        <div class="errors" *ngIf="formGrop.controls.category.errors&&formGrop.controls.category.invalid && (formGrop.controls.category.dirty || formGrop.controls.category.touched)">
+            * category is required
+           </div>
         
     <button id="login" type="submit" [disabled]='!formGrop.valid' >Continue</button>
     </form>

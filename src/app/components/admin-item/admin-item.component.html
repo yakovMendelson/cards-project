@@ -1,28 +1,54 @@
-<div class="container">
+<div class="container ">
     <h1>ערוך כרטיס</h1>
     <form [formGroup]='formGrop' (ngSubmit)='editCard()'>
 
     <label ><b>Edit location</b></label>
-    <input formControlName='location' >
+    <input  formControlName='location' >
+    <div class="errors" *ngIf="formGrop.controls.location.errors">
+       * location is required
+      </div>
 
     <label ><b>Edit model</b></label>
     <input formControlName='model'>
 
+    <div class="errors" *ngIf="formGrop.controls.model.errors">
+        * model is required
+       </div>
+
     <label ><b>Edit price</b></label>
     <input formControlName='price'>
+
+    <div class="errors" *ngIf="formGrop.controls.price.errors">
+        * price is required
+       </div>
 
     <label><b>Edit image path</b></label>
     <input formControlName='image'>
 
-    <label><b>Edit short details</b></label>
+    <div class="errors" *ngIf="formGrop.controls.image.errors">
+        * image is required
+       </div>
+
+    <label><b>Edit address</b></label>
     <input formControlName='details'>
 
-    <label><b>Edit category</b></label>
+
+    
+    <div class="errors" *ngIf="formGrop.controls.details.errors">
+        * details is required
+       </div>
+
+    <label><b>Edit category: </b></label>
     <select formControlName='category'>
         <option value="בתי-כנסת">בתי-כנסת</option>
         <option value="מקוואות">מקוואות</option>
         <option value="ספרייה">ספרייה</option>
       </select>
+
+      
+    <div class="errors" *ngIf="formGrop.controls.category.errors">
+        * category is required
+       </div>
         
     <button id="login" type="submit" [disabled]='!formGrop.valid' >Continue</button>
     </form>
