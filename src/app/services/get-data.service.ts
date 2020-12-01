@@ -49,9 +49,12 @@ private sumPrice = 0;
   }
 
   deleteFromCart(id){
-     this.cart= this.cart.filter((p)=>p.id != id);
-     let cardDel =this.cart.filter((p)=>p.id = id)
-     this.sumPrice -=cardDel[0].price
+     
+    let cardDel =this.cart.filter((p)=>p.id == id);
+    this.cart= this.cart.filter((p)=>p.id != id);
+    this.sumPrice -=cardDel[0].price
+     console.log(cardDel);
+     
      this.changeingInCart.next(this.cart); 
   }
   getSumPrice(){
